@@ -1,6 +1,5 @@
 #include <unistd.h>
 #include <iostream>
-#include "usbhotplug/usbhotplug.h"
 #include "player/player.h"
 
 using namespace std;
@@ -23,6 +22,7 @@ public:
 };
 
 int main() {
+	m_pAbstractPlayer->registeredlistening(new playerInterface);
 	m_pAbstractPlayer->start();
     while (1) {
         usleep(500000);
